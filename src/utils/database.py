@@ -2,8 +2,11 @@ import sqlite3
 import pandas as pd
 from datetime import datetime
 
+# Get temp directory path (works in Streamlit Cloud)
+DB_PATH = os.path.join(st.session_state.get("temp_dir", "."), "transactions.db")
+
 def init_db():
-    conn = sqlite3.connect('data/transactions.db')
+    conn = sqlite3.connect(DB_PATH)  # Now uses temp location
     c = conn.cursor()
     c.execute('''
         CREATE TABLE IF NOT EXISTS transactions (
