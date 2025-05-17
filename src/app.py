@@ -21,8 +21,8 @@ page = st.sidebar.radio("Go to", ["Dashboard", "Add Transaction"])
 
 # Display the selected page
 if page == "Dashboard":
-    from pages import 1_📊_Dashboard
-    st.experimental_rerun()
+    from pages.dashboard import show
+    show()
 elif page == "Add Transaction":
-    from pages import 2_➕_Add_Transaction
-    st.experimental_rerun()
+    from pages.add_transaction import show
+    show()

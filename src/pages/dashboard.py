@@ -3,7 +3,7 @@ import plotly.express as px
 from utils.database import get_all_transactions, get_balance
 
 def show():
-    st.title("\U0001f4ca Dashboard")
+    st.title("📊 Dashboard")
     
     # Get data
     transactions = get_all_transactions()
